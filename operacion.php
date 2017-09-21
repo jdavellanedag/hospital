@@ -21,7 +21,7 @@
 				<li><a href="#">Consulta hojas de vida</a></li>
 				<li><a href="#">Actualización hojas de vida</a></li>
 				<li><a href="#">Reportes especiales</a></li>
-				<li class="active"><a href="operacion.html">Operaciones matemáticas</a></li>
+				<li class="active"><a href="operacion.php">Operaciones matemáticas</a></li>
 			</ul>
 		</div>		
 	</nav>
@@ -30,29 +30,52 @@
 		<form action="operar.php" method="post">
 			<div class="form-group">
 				<label for="numero1">Número 1:</label>
-				<input type="number" class="form-control" id="numero1">
+				<input type="number" class="form-control" id="numero1" name="numero1">
 			</div>
 			<div class="form-group">
 				<label for="numero2">Número 2:</label>
-				<input type="number" class="form-control" id="numero2">
+				<input type="number" class="form-control" id="numero2" name="numero2">
 			</div>
 			<div class="form-group">
 				<p>Operaciones: </p>
 				<label class="radio-inline">
-					<input type="radio" name="operacion">Sumar
+					<input type="radio" name="operacion" value="sumar">Sumar
 				</label>
 				<label class="radio-inline">
-					<input type="radio" name="operacion">Restar
+					<input type="radio" name="operacion" value="restar">Restar
 				</label>
 				<label class="radio-inline">
-					<input type="radio" name="operacion">Multiplicar
+					<input type="radio" name="operacion" value="multiplicar">Multiplicar
 				</label>
 				<label class="radio-inline">
-					<input type="radio" name="operacion">Dividir
+					<input type="radio" name="operacion" value="dividir">Dividir
 				</label>
 			</div>
 			<button type="submit" class="btn btn-default">Calcular</button>
 		</form>
+	</div>
+	<div class="container">
+		<h3>Resultados</h3>
+		<?php
+			session_start();
+			$mensaje = $_SESSION['mensaje'];
+			$comparar = $_SESSION['comparar'];
+			if (!empty($mensaje) || !empty($comparar)) {
+				print "<p>" . $mensaje . "</p>";
+				print "<p>" . $comparar . "</p>";
+			}
+
+			session_unset();
+		?>
+	</div>
+	<div class="container">
+		<h3>Secuencia - Grupo 41</h3>
+		<?php
+			for ($i=1; $i <= 41 ; $i++) { 
+				$secuencia .= $i . " ";
+			}
+			print "<p>" . $secuencia . "</p>";
+		?>
 	</div>
 </body>
 </html>
