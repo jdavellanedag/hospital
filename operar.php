@@ -9,9 +9,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <?php  
+	//Guarda los datos enviados por el formulario
 	$numero1 = $_POST['numero1'];
 	$numero2 = $_POST['numero2'];
 	$operacion = $_POST['operacion'];
+	//Inicia sesión para enviar los resultados de las validaciones
 	session_start();
 	if (empty($numero1) || empty($numero2) || empty($operacion)) {
 		$mensaje = "Por favor diligencie los datos correctamente";
@@ -36,6 +38,7 @@
 			$comparar = "El número dos es mayor";
 		}
 	}
+	//Guarda los resultados dentro de la sesión
 	$_SESSION['mensaje'] = $mensaje;
 	$_SESSION['comparar'] = $comparar;
 	header("location: operacion.php");

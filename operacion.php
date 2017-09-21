@@ -57,7 +57,9 @@
 	<div class="container">
 		<h3>Resultados</h3>
 		<?php
+		//Inicia sesión para capturar los datos
 			session_start();
+			//Guarda las variables enviadas de la validación
 			$mensaje = $_SESSION['mensaje'];
 			$comparar = $_SESSION['comparar'];
 			if (!empty($mensaje) || !empty($comparar)) {
@@ -71,6 +73,7 @@
 	<div class="container">
 		<h3>Secuencia - Grupo 41</h3>
 		<?php
+		//Secuencia para generar una cadena de números
 			for ($i=1; $i <= 41 ; $i++) { 
 				$secuencia .= $i . " ";
 			}
