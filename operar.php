@@ -15,7 +15,7 @@
 	$operacion = $_POST['operacion'];
 	//Inicia sesión para enviar los resultados de las validaciones
 	session_start();
-	if (empty($numero1) || empty($numero2) || empty($operacion)) {
+	if (!isset($numero1) || !isset($numero2) || !isset($operacion)) {
 		$mensaje = "Por favor diligencie los datos correctamente";
 	} else {
 		if ($operacion=="sumar") {

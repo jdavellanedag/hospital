@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -62,11 +62,10 @@
 			//Guarda las variables enviadas de la validación
 			$mensaje = $_SESSION['mensaje'];
 			$comparar = $_SESSION['comparar'];
-			if (!empty($mensaje) || !empty($comparar)) {
+			if (isset($mensaje) || isset($comparar)) {
 				print "<p>" . $mensaje . "</p>";
 				print "<p>" . $comparar . "</p>";
 			}
-
 			session_unset();
 		?>
 	</div>
