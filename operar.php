@@ -18,17 +18,19 @@
 	if (!isset($numero1) || !isset($numero2) || !isset($operacion)) {
 		$mensaje = "Por favor diligencie los datos correctamente";
 	} else {
-		if ($operacion=="sumar") {
-			$mensaje = "El resultado de la suma es " . ($numero1 + $numero2); 
-		}
-		if ($operacion=="restar") {
-			$mensaje = "El resultado de la resta es " . ($numero1 - $numero2);
-		}
-		if ($operacion=="multiplicar") {
-			$mensaje = "El resultado de la multiplicacion es " . ($numero1 * $numero2);
-		}
-		if ($operacion=="dividir") {
-			$mensaje = "El resultado de la divison es " . ($numero1 / $numero2);
+		switch ($operacion) {
+			case "sumar":
+				$mensaje = "El resultado de la suma es " . ($numero1 + $numero2); 
+				break;
+			case "restar":
+				$mensaje = "El resultado de la resta es " . ($numero1 - $numero2);
+				break;
+			case "multiplicar":
+				$mensaje = "El resultado de la multiplicacion es " . ($numero1 * $numero2);
+				break;
+			case "dividir":
+				$mensaje = "El resultado de la divison es " . ($numero1 / $numero2);
+				break;
 		}
 		if ($numero1 == $numero2) {
 			$comparar = "Los números son iguales";
