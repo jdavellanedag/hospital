@@ -74,9 +74,8 @@
 		<?php
 		//Secuencia para generar una cadena de números
 			for ($i=1; $i <= 41 ; $i++) { 
-				$secuencia .= $i . " ";
+				echo ($i . " ");
 			}
-			print "<p>" . $secuencia . "</p>";
 		?>
 	</div>
 </body>
