@@ -27,7 +27,7 @@
 	</nav>
 	<div class="container">
 		<h3>Formulario de operaciones</h3>
-		<form action="operar.php" method="post">
+		<form action="php/operar.php" method="post">
 			<div class="form-group">
 				<label for="numero1">Número 1:</label>
 				<input type="number" class="form-control" id="numero1" name="numero1">

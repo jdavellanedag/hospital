@@ -43,5 +43,5 @@
 	//Guarda los resultados dentro de la sesión
 	$_SESSION['mensaje'] = $mensaje;
 	$_SESSION['comparar'] = $comparar;
-	header("location: operacion.php");
+	header("location: ../operacion.php");
 ?>
