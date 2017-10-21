@@ -15,15 +15,26 @@
 				<a class="navbar-brand" href="index.html">GESTOR HOJAS DE VIDA</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.html">Inicio</a></li>
+				<li><a href="index.html">Inicio</a></li>
 				<li><a href="admin.html">Administrador</a></li>
 				<li><a href="ingreso.html">Ingreso hojas de vida</a></li>
-				<li><a href="consulta.html">Consulta hojas de vida</a></li>
+				<li class="active"><a href="consulta.html">Consulta hojas de vida</a></li>
 				<li><a href="actualizar.html">Actualización hojas de vida</a></li>
 				<li><a href="reporte.html">Reportes especiales</a></li>
 				<li><a href="operacion.php">Operaciones matemáticas</a></li>
 			</ul>
 		</div>		
 	</nav>
+	<div class="container">
+		<h3>Consultar hoja de vida</h3>
+		<form action="php/consulta.php" method="POST">
+			<div class="form-group">
+				<label for="txtRegMedico">Registro médico</label>
+				<input type="text" class="form-control" id="txtRegMedico" name="txtRegMedico" required>
+			</div>
+			<button type="submit" class="btn btn-default">Buscar</button>
+			<button type="reset" class="btn btn-default">Limpiar</button>
+		</form>
+	</div>
 </body>
 </html>

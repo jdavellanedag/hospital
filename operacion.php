@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -16,10 +16,10 @@
 			</div>
 			<ul class="nav navbar-nav">
 				<li><a href="index.html">Inicio</a></li>
-				<li><a href="#">Administrador</a></li>
-				<li><a href="#">Ingreso hojas de vida</a></li>
-				<li><a href="#">Consulta hojas de vida</a></li>
-				<li><a href="#">Actualización hojas de vida</a></li>
+				<li><a href="admin.html">Administrador</a></li>
+				<li><a href="ingreso.html">Ingreso hojas de vida</a></li>
+				<li><a href="consulta.html">Consulta hojas de vida</a></li>
+				<li><a href="actualizar.html">Actualización hojas de vida</a></li>
 				<li><a href="reporte.html">Reportes especiales</a></li>
 				<li class="active"><a href="operacion.php">Operaciones matemáticas</a></li>
 			</ul>

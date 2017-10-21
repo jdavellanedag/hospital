@@ -19,19 +19,15 @@
 				<li><a href="admin.html">Administrador</a></li>
 				<li><a href="ingreso.html">Ingreso hojas de vida</a></li>
 				<li><a href="consulta.html">Consulta hojas de vida</a></li>
-				<li><a href="actualizar.html">Actualización hojas de vida</a></li>
-				<li class="active"><a href="reporte.html">Reportes especiales</a></li>
+				<li class="active"><a href="actualizar.html">Actualización hojas de vida</a></li>
+				<li><a href="reporte.html">Reportes especiales</a></li>
 				<li><a href="operacion.php">Operaciones matemáticas</a></li>
 			</ul>
 		</div>		
 	</nav>
 	<div class="container">
-		<h3>Formulario Reportes especiales</h3>
-		<form action="php/reporte.php" method="POST">
-			<div class="form-group">
-				<label for="idDNI">Número identificación</label>
-				<input type="number" class="form-control" id="idDNI" name="idDNI" required>
-			</div>
+		<h3>Actualizacion de Hojas de Vidas</h3>
+		<form action="php/actualizar.php" method="POST">
 			<div class="form-group">
 				<label for="txtNombre">Nombres</label>
 				<input type="text" class="form-control" id="txtNombre" name="txtNombre" required>
@@ -41,20 +37,36 @@
 				<input type="text" class="form-control" id="txtApellido" name="txtApellido" required>
 			</div>
 			<div class="form-group">
-				<label for="txtCorreo">Correo electrónico</label>
-				<input type="email" class="form-control" id="txtCorreo" name="txtCorreo" required>
+				<label for="txtRegMedico">Registro médico</label>
+				<input type="text" class="form-control" id="txtRegMedico" name="txtRegMedico" required>
 			</div>
 			<div class="form-group">
-				<label for="txtContrasena">Contraseña</label>
-				<input type="password" class="form-control" id="txtContrasena" name="txtContrasena" required>
+				<label for="idCedula">Cédula</label>
+				<input type="number" class="form-control" id="idCedula" name="idCedula" required>
 			</div>
 			<div class="form-group">
 				<label for="txtTelefono">Telefono</label>
 				<input type="number" class="form-control" id="txtTelefono" name="txtTelefono" required>
 			</div>
-			<button type="submit" class="btn btn-default">Generar Reporte</button>
+			<div class="form-group">
+				<label for="txtCorreo">Correo electrónico</label>
+				<input type="email" class="form-control" id="txtCorreo" name="txtCorreo" required>
+			</div>
+			<div class="form-group">
+				<label for="txtDireccion">Direccion</label>
+				<input type="text" class="form-control" id="txtDireccion" name="txtDireccion" required>
+			</div>
+			<div class="form-group">
+				<label for="txtEspecialidad">Especialidad</label>
+				<input type="text" class="form-control" id="txtEspecialidad" name="txtEspecialidad" required>
+			</div>
+			<div class="form-group">
+				<label for="txtCorreo">Hospital de trabajo</label>
+				<input type="email" class="form-control" id="txtCorreo" name="txtCorreo" required>
+			</div>
+			<button type="submit" class="btn btn-default">Actualizar</button>
 			<button type="reset" class="btn btn-default">Limpiar</button>
 		</form>
-	</div>
+	</div>	
 </body>
 </html>
