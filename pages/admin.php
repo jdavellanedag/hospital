@@ -20,70 +20,36 @@ if (isset($_COOKIE['idSesion'])) {
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
 					<li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>
+					<li class="nav-item active"><a class="nav-link" href="admin.php">Admin</a></li>
 					<li class="nav-item"><a class="nav-link" href="ingreso.php">Ingreso hojas de vida</a></li>
 					<li class="nav-item"><a class="nav-link" href="consulta.php">Consulta hojas de vida</a></li>
 					<li class="nav-item"><a class="nav-link" href="actualizar.php">Actualización hojas de vida</a></li>
 					<li class="nav-item"><a class="nav-link" href="reporte.php">Reportes especiales</a></li>
-					<li class="nav-item active"><a class="nav-link" href="operacion.php">Operaciones matemáticas</a></li>
+					<li class="nav-item"><a class="nav-link" href="operacion.php">Operaciones matemáticas</a></li>
 					<li class="nav-item"><a class="nav-link" href="bd.php">Manejo base de datos</a></li>
 				</div>
 			</div>
 		</div>		
 	</nav>
-	<div class="container">
-		<h3>Formulario de operaciones</h3>
-		<form action="../php/operar.php" method="post">
-			<div class="form-group">
-				<label for="numero1">Número 1:</label>
-				<input type="number" class="form-control" id="numero1" name="numero1">
-			</div>
-			<div class="form-group">
-				<label for="numero2">Número 2:</label>
-				<input type="number" class="form-control" id="numero2" name="numero2">
-			</div>
-			<div class="form-group">
-				<p>Operaciones: </p>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="sumar">Sumar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="restar">Restar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="multiplicar">Multiplicar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="dividir">Dividir
-				</label>
-			</div>
-			<button type="submit" class="btn btn-default">Calcular</button>
-		</form>
-	</div>
-	<div class="container">
-		<h3>Resultados</h3>
-		<?php
-		//Inicia sesión para capturar los datos
-			session_start();
-			//Guarda las variables enviadas de la validación
-			$mensaje = $_SESSION['mensaje'];
-			$comparar = $_SESSION['comparar'];
-			if (isset($mensaje) || isset($comparar)) {
-				print "<p>" . $mensaje . "</p>";
-				print "<p>" . $comparar . "</p>";
-			}
-			session_unset();
-		?>
-	</div>
-	<div class="container">
-		<h3>Secuencia - Grupo 41</h3>
-		<?php
-		//Secuencia para generar una cadena de números
-			for ($i=1; $i <= 41 ; $i++) { 
-				echo ($i . " ");
-			}
-		?>
-	</div>
+	<main>
+		<div class="container">
+			<h3>Consultar registro medico</h3>
+			<p>Elimine el registro seleccionado</p>
+			<form action="../php/eliminar.php" method="POST">
+				<div class="form-group">
+					<label for="txtRegMedico">Registro médico</label>
+					<input type="text" class="form-control" id="txtRegMedico" name="txtRegMedico" required>
+				</div>
+				<button type="submit" class="btn btn-default">Eliminar</button>
+				<button type="reset" class="btn btn-default">Limpiar</button>
+			</form>
+			<h3>Backup</h3>
+			<p>Genere el backup de la base de datos</p>
+			<form action="../php/backup.php" method="POST">
+				<button type="submit" class="btn btn-default">Generar Backup</button>
+			</form>
+		</div>
+	</main>
 	<footer class="footer">
 		<div class="container">
 			<span class="text-muted">UNAD - Programación de sitios web</span>

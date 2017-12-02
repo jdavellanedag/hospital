@@ -1,4 +1,5 @@
 <?php
+if (isset($_COOKIE['idSesion'])) {
 require('../lib/fpdf/fpdf.php');
 date_default_timezone_set("America/Bogota");
 
@@ -59,4 +60,5 @@ if($result->num_rows > 0){
 }
 
 $pdf->Output();
+}
 ?>

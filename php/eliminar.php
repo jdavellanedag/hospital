@@ -1,4 +1,5 @@
 <?php
+if (isset($_COOKIE['idSesion'])) {
 $servername = "localhost";
 $username = "root";
 $password = "12345678";
@@ -26,8 +27,8 @@ if($result->num_rows > 0){
 }
 
 mysqli_close($conn);
-
+}
 ?>
 <div>
-	<a href="../pages/admin.html">Volver</a>
+	<a href="../pages/admin.php">Volver</a>
 </div>

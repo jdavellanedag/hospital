@@ -1,4 +1,5 @@
 <?php 
+if (isset($_COOKIE['idSesion'])) {
 	$idDNI = $_POST['idDNI'];
 	$txtNombre = $_POST['txtNombre'];
 	$txtApellido = $_POST['txtApellido'];
@@ -17,7 +18,8 @@
 		//readfile($ruta);
 		?>
 			<p>Reporte guardado correctamente</p>
-			<a href="../pages/reporte.html">Volver</a>
+			<a href="../pages/reporte.php">Volver</a>
 		<?
 	}
+}
 ?>

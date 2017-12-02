@@ -25,64 +25,61 @@ if (isset($_COOKIE['idSesion'])) {
 					<li class="nav-item"><a class="nav-link" href="consulta.php">Consulta hojas de vida</a></li>
 					<li class="nav-item"><a class="nav-link" href="actualizar.php">Actualización hojas de vida</a></li>
 					<li class="nav-item"><a class="nav-link" href="reporte.php">Reportes especiales</a></li>
-					<li class="nav-item active"><a class="nav-link" href="operacion.php">Operaciones matemáticas</a></li>
-					<li class="nav-item"><a class="nav-link" href="bd.php">Manejo base de datos</a></li>
+					<li class="nav-item"><a class="nav-link" href="operacion.php">Operaciones matemáticas</a></li>
+					<li class="nav-item active"><a class="nav-link" href="bd.php">Manejo base de datos</a></li>
 				</div>
 			</div>
 		</div>		
 	</nav>
 	<div class="container">
-		<h3>Formulario de operaciones</h3>
-		<form action="../php/operar.php" method="post">
-			<div class="form-group">
-				<label for="numero1">Número 1:</label>
-				<input type="number" class="form-control" id="numero1" name="numero1">
-			</div>
-			<div class="form-group">
-				<label for="numero2">Número 2:</label>
-				<input type="number" class="form-control" id="numero2" name="numero2">
-			</div>
-			<div class="form-group">
-				<p>Operaciones: </p>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="sumar">Sumar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="restar">Restar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="multiplicar">Multiplicar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="operacion" value="dividir">Dividir
-				</label>
-			</div>
-			<button type="submit" class="btn btn-default">Calcular</button>
-		</form>
-	</div>
-	<div class="container">
-		<h3>Resultados</h3>
-		<?php
-		//Inicia sesión para capturar los datos
-			session_start();
-			//Guarda las variables enviadas de la validación
-			$mensaje = $_SESSION['mensaje'];
-			$comparar = $_SESSION['comparar'];
-			if (isset($mensaje) || isset($comparar)) {
-				print "<p>" . $mensaje . "</p>";
-				print "<p>" . $comparar . "</p>";
-			}
-			session_unset();
-		?>
-	</div>
-	<div class="container">
-		<h3>Secuencia - Grupo 41</h3>
-		<?php
-		//Secuencia para generar una cadena de números
-			for ($i=1; $i <= 41 ; $i++) { 
-				echo ($i . " ");
-			}
-		?>
+		<h3>Tabla de operaciones</h3>
+		<p>Operaciones disponibles</p>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>
+						Operacion
+					</th>
+					<th>
+						Descripcion
+					</th>
+					<th>
+						Ejecutar
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Crear Base de datos
+					</td>
+					<td>
+						Se creará la base de datos bdunad41 dentro de localhost
+					</td>
+					<td>
+						<form action="../php/crear_bd.php" method="POST">
+							<button type="submit"class="btn btn-default">Crear Base de Datos</button>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Crear Tabla
+					</td>
+					<td>
+						Se creará la tabla tabla41 dentro de la base de datos previamente creada
+					</td>
+					<td>
+						<form action="../php/crear_tabla.php" method="POST">
+							<button type="submit"class="btn btn-default">Crear Tabla</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="list-group">
+  			<a href="http://localhost/phpMyAdmin" class="list-group-item active" target="_blank">Abrir phpMyAdmin</a>
+		</div>
 	</div>
 	<footer class="footer">
 		<div class="container">
@@ -102,6 +99,6 @@ if (isset($_COOKIE['idSesion'])) {
 			</div>
 			</div>
 	</div>
-<?php }	?>
+<?php }	?>	
 </body>
 </html>

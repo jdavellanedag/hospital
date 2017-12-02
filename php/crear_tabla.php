@@ -1,4 +1,5 @@
 <?php
+if (isset($_COOKIE['idSesion'])) {
 $servername = "localhost";
 $username = "root";
 $password = "12345678";
@@ -13,7 +14,6 @@ if (!$conn) {
 
 $sql = "USE ". $dbName;
 if (mysqli_query($conn, $sql)) {
-
 	$sqlTable = "CREATE TABLE " . $tableName . "(
 	id INT(6) PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(30) NOT NULL,
@@ -39,10 +39,9 @@ if (mysqli_query($conn, $sql)) {
     	echo "La base de datos ". $dbName . " no ha sido creada";
     }
 }
-
 mysqli_close($conn);
-
+}
 ?>
 <div>
-	<a href="../pages/bd.html">Volver</a>
+	<a href="../pages/bd.php">Volver</a>
 </div>
