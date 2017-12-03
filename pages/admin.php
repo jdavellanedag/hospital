@@ -49,6 +49,62 @@ if (isset($_COOKIE['idSesion'])) {
 				<button type="submit" class="btn btn-default">Generar Backup</button>
 			</form>
 		</div>
+		<div class="container" style="margin-top: 10px;">
+			<div class="card">
+				<div class="card-header text-center bg-secondary text-white">
+				USUARIOS
+				</div>
+				<div class="card-body text-white bg-dark">
+					<h4 class="card-title">Administración de usuarios</h4>
+					<p class="card-text"></p>
+					<form action="../php/crear_usuario.php" method="POST" class="form-row align-items-center">
+						<div class="col-sm-3">
+							<label for="nombreUsuario" class="sr-only">Nombre de usuario</label>
+							<input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Nombre de Usuario" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="contrasena" class="sr-only">Contraseña</label>
+							<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+						</div>
+						<div class="col-auto">
+							<div class="form-check mb-2 mb-sm-0">
+								<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" id="estado" name="estado">Estado
+								</label>
+							</div>
+						</div>
+						<div class="col-auto">
+							<button type="submit" class="btn btn-primary">Crear</button>
+						</div>
+					</form>
+					<form action="../php/actualizar_usuario.php" method="POST" class="form-row align-items-center">
+						<div class="col-sm-3">
+							<label for="nombreUsuario" class="sr-only">Nombre de usuario</label>
+							<input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Nombre de Usuario" required>
+						</div>
+						<div class="col-auto">
+							<div class="form-check mb-2 mb-sm-0">
+								<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" id="estado" name="estado">Estado
+								</label>
+							</div>
+						</div>
+						<div class="col-auto">
+							<button type="submit" class="btn btn-primary bg-info text-white">Actualizar</button>
+						</div>
+					</form>
+					<form action="../php/eliminar_usuario.php" method="POST" class="form-row align-items-center">
+						<div class="col-sm-3">
+							<label for="nombreUsuario" class="sr-only">Nombre de usuario</label>
+							<input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" placeholder="Nombre de Usuario" required>
+						</div>
+						<div class="col-auto">
+							<button type="submit" class="btn btn-primary bg-danger text-white">Eliminar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</main>
 	<footer class="footer">
 		<div class="container">

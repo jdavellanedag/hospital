@@ -64,13 +64,26 @@ if (isset($_COOKIE['idSesion'])) {
 				</tr>
 				<tr>
 					<td>
-						Crear Tabla
+						Crear Tabla Registros
 					</td>
 					<td>
 						Se creará la tabla tabla41 dentro de la base de datos previamente creada
 					</td>
 					<td>
 						<form action="../php/crear_tabla.php" method="POST">
+							<button type="submit"class="btn btn-default">Crear Tabla</button>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Crear Tabla Usuarios
+					</td>
+					<td>
+						Se creará la tabla usuarios dentro de la base de datos previamente creada
+					</td>
+					<td>
+						<form action="../php/crear_tabla2.php" method="POST">
 							<button type="submit"class="btn btn-default">Crear Tabla</button>
 						</form>
 					</td>
