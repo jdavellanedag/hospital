@@ -1,5 +1,5 @@
 <?php
-if (isset($_COOKIE['idSesion'])) {
+
 $servername = "localhost";
 $username = "root";
 $password = "12345678";
@@ -36,7 +36,7 @@ if (mysqli_query($conn, $sql)) {
     }
 }
 mysqli_close($conn);
-}
+
 ?>
 <div>
 	<a href="../pages/bd.php">Volver</a>
